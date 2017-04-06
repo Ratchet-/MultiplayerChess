@@ -53,8 +53,7 @@ public class Cell {
 				}
 				break;
 		}
-
-
+		
 		return moves;
 	}
 }
