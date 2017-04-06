@@ -43,17 +43,21 @@ public class Cell {
 		switch(id) {
 			case 0x265F:
 			case 0x2659:
-				if(grid[selectedCell.x][selectedCell.y+(whitePiece?1:-1)].id == ' ') {
-					moves[selectedCell.x][selectedCell.y+(whitePiece?1:-1)] = true;
+				byte whiteStatus = 1;
+				if(whitePiece) {
+					whiteStatus*=-1;
+				}
+				if(grid[selectedCell.x][selectedCell.y+whiteStatus].id == ' ') {
+					moves[selectedCell.x][selectedCell.y+whiteStatus] = true;
 					if(firstMove) {
-						if(grid[selectedCell.x][selectedCell.y+(whitePiece?2:-2)].id == ' ') {
-							moves[selectedCell.x][selectedCell.y+(whitePiece?2:-2)] = true;
+						if(grid[selectedCell.x][selectedCell.y+whiteStatus*2].id == ' ') {
+							moves[selectedCell.x][selectedCell.y+whiteStatus*2] = true;
 						}
 					}
 				}
 				break;
 		}
-		
+
 		return moves;
 	}
 }

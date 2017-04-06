@@ -1,6 +1,6 @@
 all: Chess.java Cell.java
-	javac Cell.java
-	javac Chess.java
+	javac -g Cell.java
+	javac -g  Chess.java
 	java Chess
 
 debug:	Chess.class
